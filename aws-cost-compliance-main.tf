@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 variable "region"        { type = string  default = "us-east-1" }
-variable "email"         { type = string  default = "josh_7_86@yahoo.com" }
+variable "email"         { type = string  default = "email" }
 variable "budget_name"   { type = string  default = "democost86" }
 variable "budget_amount" { type = number  default = 50 }
 variable "bucket_name"   { type = string  default = "demo-cost-bucket-CHANGE-ME" }
