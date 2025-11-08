@@ -1,0 +1,23 @@
+variable "vpc_id" {
+  type = string
+}
+
+variable "route_table_ids" {
+  type = list(string)
+}
+
+data "aws_region" "current" {}
+
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id            = var.vpc_id
+  service_name      = "com.amazonaws.${data.aws_region.current.name}.s3"
+  vpc_endpoint_type = "Gateway"
+  route_table_ids   = var.route_table_ids
+}
+
+resource "aws_vpc_endpoint" "dynamodb" {
+  vpc_id            = var.vpc_id
+  service_name      = "com.amazonaws.${data.aws_region.current.name}.dynamodb"
+  vpc_endpoint_type = "Gateway"
+  route_table_ids   = var.route_table_ids
+}

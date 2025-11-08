@@ -1,0 +1,9 @@
+.terraform/
+.terraform.lock.hcl
+*.zip
+*.pyc
+node_modules/
+dist/
+__pycache__/
+.idea/
+.DS_Store
